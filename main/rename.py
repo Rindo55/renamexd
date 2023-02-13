@@ -27,15 +27,10 @@ async def rename_file(bot, msg):
             return
     else:
         cap = f"{new_namex}"
-    raw_thumbnail = temp.THUMBNAIL 
-    if raw_thumbnail:
-        og_thumbnail = await bot.download_media(raw_thumbnail)
-    else:
-        og_thumbnail = await bot.download_media(og_media.thumbs[0].file_id)
     await sts.edit("Trying to Uploading")
     c_time = time.time()
     try:
-        await bot.send_document(msg.chat.id, document=downloaded, caption=cap, progress=progress_message, progress_args=("Uploade Started.....", sts, c_time))        
+        await bot.send_document(msg.chat.id, document=downloaded, caption=new_namex, progress=progress_message, progress_args=("Uploade Started.....", sts, c_time))        
     except Exception as e:  
         await sts.edit(f"Error {e}") 
         return               
