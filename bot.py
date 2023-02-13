@@ -5,7 +5,7 @@ from aiohttp import web
 
 class Bot(Client):
     def __init__(self):
-        super().init(
+        super().__init__(
             name="simple-renamer",
             api_id=API_ID,
             api_hash=API_HASH,
