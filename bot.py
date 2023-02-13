@@ -4,8 +4,8 @@ from route import web_server
 from aiohttp import web
 
 class Bot(Client):
-    def init(self):
-        super().init(
+    def __init__(self):
+        super().__init__(
             name="simple-renamer",
             api_id=API_ID,
             api_hash=API_HASH,
