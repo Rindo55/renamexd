@@ -3,7 +3,17 @@ from config import *
 from route import web_server
 from aiohttp import web
 
-
+class Bot(Client):
+    def __init__(self):
+        super().init(
+            name="simple-renamer",
+            api_id=API_ID,
+            api_hash=API_HASH,
+            bot_token=BOT_TOKEN,
+            workers=100,
+            plugins={"root": "main"},
+            sleep_threshold=10,
+        )
     async def start(self):
         await super().start()
         me = await self.get_me()   
